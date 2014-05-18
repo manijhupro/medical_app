@@ -21,8 +21,8 @@ class StaticPagesControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should get form" do
-    get :form
+  test "should get forum" do
+    get :forum
     assert_response :success
   end
 

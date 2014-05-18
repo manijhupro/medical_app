@@ -1,2 +1,35 @@
-<h1>StaticPages#home</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
+
+<div>
+    <%= render'layouts/header' %>
+    <div class="navbar-inner"><marquee>scrolling notice board</marquee></div>
+<div class="center ">
+
+   <div class="containt pull-left"><h2>this week's highest Scorers</h2><p></p></div>
+
+
+        <div class=" pull-right">
+            <form accept-charset="UTF-8" action="/sessions" method="post">
+                <div class="pull-right" >
+                    <label for="session_email" style="font-size: 13px;">Email</label>
+                    <input id="session_email" name="session[email]" style="height: 10px; " type="text" />
+
+                    <label for="session_password" style="font-size: 13px;">Password</label>
+                    <input id="session_password" name="session[password]" style="height: 10px;"
+                           type="password" />
+                </div>
+                <div>
+                <input class="btn  btn-primary" name="signin"   type="submit"
+                       value="Log In" /> <br></div>
+                <div><h3>Not yet a Member?</h3></div>
+
+                <%= link_to "Sign up now!",signup_path , class: "btn btn-primary" %>
+
+                <br>
+                <div class="nav" style="margin-top: 25px;"><textarea rows="4" cols="50" name="comment" form="usrform">
+                    Enter text here...</textarea></div>
+
+            </form>
+        </div>
+</div>
+</div>
+<h2>hello</h2>

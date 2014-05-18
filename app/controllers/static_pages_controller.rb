@@ -11,7 +11,7 @@ class StaticPagesController < ApplicationController
   def material
   end
 
-  def form
+  def forum
   end
 
   def contact

@@ -1,36 +1,51 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>online exam preparation app |<%=yield(:title) %></title>
-    <%= stylesheet_link_tag    "application", :media => "all" %>
+
+    <title><%= full_title(yield(:title)) %></title>
+    <%= stylesheet_link_tag    "application", media: "all" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
+    <%= render 'layouts/shim' %>
+
+    <style>
+
+        body
+        {
+            padding-top:0px;
+
+        }
+    </style>
+
+
 </head>
+
 <body>
 
-<div id="container" style="width:auto;height: auto">
+<div class="mainwrapper" style="padding-bottom: 0px;">
+    <div class="containt pull-right" id="sidebar-wrapper"><h3>Avertise2</h3></div><div class="containt pull-left"><h3>Avertise1</h3></div>
+    <div class="container" >
 
 
-    <div id="menu" style="background-color:#FFD700;height:700px;width:200px;float:left;">
-        <b>advetisment</b>
+    <h2><center>Onlne Exam Preparation</center></h2>
+        <div class="conatiner1">
 
+            <%= link_to image_tag("rails.png", alt: "Rails" , id: "logo"), '#' %>
+
+            <div class="container1 " style="width: 930px;">logo
+
+                <div class="nav pull-right navbar-inner " style="width: 800px;">our Business slogan</div></div>
+
+        </div>
+    </div>
+    <div class="container">
+
+        <%= yield %>
 
     </div>
-
-    <div id="content" style="background-color:#EEEEEE;height:700px;width:870px;float:left;">
-        Content goes here
-
-        <div id="footer" style="background-color:#FFA500;clear:both;text-align:center; bottom:0">
-            Copyright © W3Schools.com</div>
-
-    </div>
-
-    <div id="menu" style="background-color:#FFD700;height:700px;width:200px;float:right;">
-        <b>advertisment </b></div>
-
-
-
+    <div><%= render 'layouts/footer' %></div>
 </div>
+
 
 </body>
 </html>

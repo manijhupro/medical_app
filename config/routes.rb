@@ -1,15 +1,29 @@
 MedicalApp::Application.routes.draw do
+  get "users/new"
+  resources :users
+  root to: 'static_pages#home'
+
+
+ # root to: 'static_pages#home'
+
+  match '/signup',  to: 'users#new'
+
+
   get "static_pages/home"
 
-  get "static_pages/about"
+  match '/about',   to: 'static_pages#about'
 
   get "static_pages/notice"
 
   get "static_pages/material"
 
-  get "static_pages/form"
+  get "static_pages/forum"
 
-  get "static_pages/contact"
+  match '/contact', to: 'static_pages#contact'
+
+  match '/signin',  to: 'sessions#new'
+
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
