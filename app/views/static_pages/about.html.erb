@@ -1,2 +1,21 @@
-<h1>StaticPages#about</h1>
-<p>Find me in app/views/static_pages/about.html.erb</p>
+<div>
+    <%= render'layouts/header' %>
+      <div class="center ">
+
+        <div class="containt pull-left" ><div class="nav pull-left navbar-inner">about us</div>
+           <div><div class="containt pull-left" style="border: 1px solid ; height:400px;width: 550px ">
+            "hello this contains explanation about app"</div></div>
+        </div>
+
+        <div class="nav pull-right"><div class="nav"> <br></div>
+
+            <div class="nav pull-right" >
+                <%= link_to image_tag("mbbs1.jpg",  :width => 300,   alt: "mbbs" , id: "logo"), '#' %>
+
+                <div><video id="sampleMovie" height="200" width="380" src="#" controls> </video></div>
+            </div>
+        </div>
+
+
+    </div>
+</div>

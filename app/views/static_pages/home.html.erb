@@ -8,19 +8,22 @@
 
 
         <div class=" pull-right">
-            <form accept-charset="UTF-8" action="/sessions" method="post">
-                <div class="pull-right" >
-                    <label for="session_email" style="font-size: 13px;">Email</label>
-                    <input id="session_email" name="session[email]" style="height: 10px; " type="text" />
 
-                    <label for="session_password" style="font-size: 13px;">Password</label>
-                    <input id="session_password" name="session[password]" style="height: 10px;"
-                           type="password" />
+                <div class="pull-right" >
+                    <%= form_for(:session, url: '#') do |f| %>
+
+                        <%= f.label :email %>
+                        <%= f.text_field :email %>
+
+                        <%= f.label :password %>
+                        <%= f.password_field :password %><br>
+
+                        <%= f.submit "Sign in", class: "btns btn-primary" %>
+                    <% end %>
+                    <br>
                 </div>
-                <div>
-                <input class="btn  btn-primary" name="signin"   type="submit"
-                       value="Log In" /> <br></div>
-                <div><h3>Not yet a Member?</h3></div>
+
+                     <div><h3>Not yet a Member?</h3></div>
 
                 <%= link_to "Sign up now!",signup_path , class: "btn btn-primary" %>
 
@@ -28,7 +31,7 @@
                 <div class="nav" style="margin-top: 25px;"><textarea rows="4" cols="50" name="comment" form="usrform">
                     Enter text here...</textarea></div>
 
-            </form>
+
         </div>
 </div>
 </div>
