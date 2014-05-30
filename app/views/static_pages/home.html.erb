@@ -10,7 +10,7 @@
         <div class=" pull-right">
 
                 <div class="pull-right" >
-                    <%= form_for(:session, url: '#') do |f| %>
+                    <%= form_for(:session, url: session_path) do |f| %>
 
                         <%= f.label :email %>
                         <%= f.text_field :email %>
@@ -28,9 +28,10 @@
                 <%= link_to "Sign up now!",signup_path , class: "btn btn-primary" %>
 
                 <br>
-                <div class="nav" style="margin-top: 25px;"><textarea rows="4" cols="50" name="comment" form="usrform">
-                    Enter text here...</textarea></div>
-
+                <div style="margin-top: 25px;"><div class="containt pull-left" style="border: 1px solid ; height:100px;width: 250px ">
+                    "Topper's Comments about the sites.
+                    this will be scrolling thus showing multiple comments"</div></div>
+            <center><img src="2.jpg" name="slide" width=200 height=200></center>
 
         </div>
 </div>
