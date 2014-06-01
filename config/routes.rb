@@ -1,23 +1,28 @@
 MedicalApp::Application.routes.draw do
-  resources :users do
-    member do
-      get :following, :followers
-    end
-  end
-  root to: 'static_pages#home'
-  resources :sessions,      only: [:new, :create, :destroy]
-  resources :microposts,    only: [:create, :destroy]
-  resources :relationships, only: [:create, :destroy]
 
-  match '/signup',  to: 'users#new'
-  match '/signin',  to: 'sessions#new',         via: 'get'
+  root to: 'static_pages#home'
+
   match '/about',   to: 'static_pages#about'
   match '/notice', to: 'static_pages#notice'
   match '/material',   to: 'static_pages#material'
   match '/forum',   to: 'static_pages#forum'
   match '/contact', to: 'static_pages#contact'
 
-  resources :users
+
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
+  resources :sessions,      only: [:new, :create, :destroy]
+  resources :microposts,    only: [:create, :destroy]
+  resources :relationships, only: [:create, :destroy]
+
+  match '/signup',  to: 'users#new',            via: 'get'
+  match '/signin',  to: 'sessions#new',         via: 'get'
+  match '/signout', to: 'sessions#destroy',     via: 'delete'
+
+
 
 
   # The priority is based upon order of creation:
