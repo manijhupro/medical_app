@@ -17,6 +17,6 @@ class SessionsController < ApplicationController
 
   def destroy
     sign_out
-    redirect_to_or  root_url
+    redirect_back_or  root_url
   end
 end

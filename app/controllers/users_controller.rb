@@ -36,7 +36,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if @user.save
       sign_in @user
-      flash[:success] = "Welcome to the Sample App!"
+      flash[:notice] = "Welcome to the Sample App!"
       redirect_to @user
     else
       render 'new'
@@ -48,8 +48,8 @@ class UsersController < ApplicationController
   end
 
   def update
-    if @user.update_attributes(user_params)
-      flash[:success] = "Profile updated"
+    if @user.update_attributes(params[:user])
+      flash[:notice] = "Profile updated"
       sign_in @user
       redirect_to @user
     else
@@ -59,7 +59,7 @@ class UsersController < ApplicationController
 
   def destroy
     User.find(params[:id]).destroy
-    flash[:success] = "User destroyed."
+    flash[:notice] = "User destroyed."
     redirect_to users_path
   end
 
